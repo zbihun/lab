@@ -10,4 +10,5 @@ urlpatterns = [
     path('', include(router.urls)),
     path('admin/', admin.site.urls),
     path('zoo/', include('zoo.urls')),
+    path('test-cors/', views.test_cors, name='test_cors'),
 ]

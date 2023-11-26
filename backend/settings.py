@@ -56,6 +56,8 @@ MIDDLEWARE = [
 CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
+    "http://192.168.31.22:3000",
+    "http://localhost:3000",
     # Add other allowed origins if needed
 ]
 
@@ -131,3 +133,15 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+import os
+
+FRONTEND_DIR = os.path.join(BASE_DIR, 'frontend2', 'build')
+
+# Configure Django to look for the React build files
+STATICFILES_DIRS = [
+    os.path.join(FRONTEND_DIR, 'static'),
+]
+
+# Configure Django to serve the index.html file
+TEMPLATES[0]['DIRS'].append(os.path.join(FRONTEND_DIR, 'templates'))

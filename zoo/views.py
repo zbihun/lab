@@ -9,3 +9,11 @@ class ZooViewSet(viewsets.ModelViewSet):
     """
     queryset = Zoo.objects.all()
     serializer_class = ZooSerializer
+
+
+from django.http import JsonResponse
+
+def test_cors(request):
+    response = JsonResponse({'message': 'CORS test successful'})
+    response["Access-Control-Allow-Origin"] = "http://localhost:3000"
+    return response
