@@ -9,8 +9,8 @@ import zooImage from "./image.jpg"
 const Header = () => {
   return (
 
-    <Card>
-      <Box display="flex">
+    <Card style={{ margin: "30px 0" }}>
+      <Box display="flex" style={{ margin: "20px 0" }}>
         <CardMedia
           component="img"
           height="350"

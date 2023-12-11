@@ -6,12 +6,12 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import Divider from '@mui/material/Divider';
-import logo from './logo.png'; // Import your logo
+import logo from './logo.png';
 
 
 const Footer = () => {
   return (
-    <div style={{position: "fixed", left: "0", "bottom": "0", right: "0"}}>
+    <div style={{left: "0", "bottom": "0", right: "0"}}>
     <AppBar position="static" style={{backgroundColor: "#7071E8", color: "#fff"}}>
       <Toolbar>
         <Typography variant="body2" color="inherit" style={{ marginLeft: '20px' }}>

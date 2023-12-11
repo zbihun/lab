@@ -145,3 +145,8 @@ STATICFILES_DIRS = [
 
 # Configure Django to serve the index.html file
 TEMPLATES[0]['DIRS'].append(os.path.join(FRONTEND_DIR, 'templates'))
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+}
+

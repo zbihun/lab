@@ -13,9 +13,10 @@ import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import Footer from './Footer';
-import Catalog from './Catalog'; // Import the Catalog component
+import Catalog from './Catalog';
+import ItemDetails from './ItemDetails'
 import "./styles.css";
-import logo from './logo.png'; // Import your logo
+import logo from './logo.png';
 
 const Home = () => <div style={{paddingBottom: "100px", paddingTop: "120px"}}>
   <Header/>
@@ -56,6 +57,8 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
+          <Route path="/details/:id" element={<ItemDetails />} />
+          <Route path="/card" element={<Home />} />
         </Routes>
         <Footer />
     </Router>
