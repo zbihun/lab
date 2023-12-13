@@ -6,7 +6,14 @@ import ListItemText from '@mui/material/ListItemText';
 
 const Navigation = () => {
   return (
-    <List className='navigation' style={{ backgroundColor: "#e0d8e2", color: "#fff", display: "flex", justifyContent: 'center' }}>
+    <div style={{ position: 'sticky', width: '100%', zIndex: '1000' }}>
+      <List className='navigation' style={{ 
+      backgroundColor: "#e0d8e2",
+        color: "#fff",
+        display: "flex",
+        justifyContent: 'center',
+        position: 'sticky',
+     }}>
       <ListItem button component={Link} to="/home" activeclassname="active-link">
         <ListItemText style={{textAlign: "center"}} primary="Home" />
       </ListItem>
@@ -17,6 +24,7 @@ const Navigation = () => {
         <ListItemText style={{textAlign: "center"}} primary="Cart" />
       </ListItem>
     </List>
+    </div>
   );
 };
 

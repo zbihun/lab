@@ -20,7 +20,6 @@ const ItemCard = ({ item, i }) => {
         navigate(`/details/${id}`);
     };
     const images = [image0, image1, image2, image3];
-    console.log(i, images.length);
 
     return (
         <Card variant="outlined" sx={{ maxWidth: 500, minWidth: 375, marginRight: 3, marginBottom: 3 }}>
@@ -28,7 +27,7 @@ const ItemCard = ({ item, i }) => {
                 component="img"
                 alt="zoo"
                 height="160"
-                image={i < images.length ? images[i] : images[images.length-i]}
+                image={ i < images.length ? images[i] : images[Math.floor(i % images.length)]}
             />
             <CardContent>
                 <Typography gutterBottom variant="h5" component="div">

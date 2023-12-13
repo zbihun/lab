@@ -10,12 +10,15 @@ import Box from '@mui/material/Box';
 import zooImage from "./itemImage.jpg"
 import Loader from './Loader';
 import api from './api/api';
+import { useDispatch } from 'react-redux';
+import { addToCart } from './redux/actions';
 
 
 const ItemDetails = () => {
   const { id } = useParams();
   const [loading, setLoading] = useState(true);
   const [zooDetails, setZooDetails] = useState(null);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchZooDetails = async () => {
@@ -44,6 +47,10 @@ const ItemDetails = () => {
     return <div>Loading...</div>;
   }
 
+  const handleBuyTicket = () => {
+    dispatch(addToCart(zooDetails));
+  };
+
   return (
     <div style={{ marginTop: "120px" }}>
         <Card variant="outlined" sx={{marginRight: 3, marginBottom: 3 }}>
@@ -70,11 +77,11 @@ const ItemDetails = () => {
                         Visitors: {zooDetails.visitors}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="div">
-                        Ticket Price: 100 UAH
+                        Ticket Price: {zooDetails.price} UAH
                     </Typography>
                     <CardActions>
                         <Button>Go Back</Button>
-                        <Button variant="contained" color="primary">Buy Ticket</Button>
+                        <Button variant="contained" color="primary" onClick={handleBuyTicket}>Add to Cart</Button>
                     </CardActions>
                 </CardContent>
             </Box>

@@ -17,6 +17,7 @@ import Catalog from './Catalog';
 import ItemDetails from './ItemDetails'
 import "./styles.css";
 import logo from './logo.png';
+import CartPage from './CartPage';
 
 const Home = () => <div style={{paddingBottom: "100px", paddingTop: "120px"}}>
   <Header/>
@@ -58,7 +59,7 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/catalog" element={<Catalog />} />
           <Route path="/details/:id" element={<ItemDetails />} />
-          <Route path="/card" element={<Home />} />
+          <Route path="/cart" element={<CartPage />} />
         </Routes>
         <Footer />
     </Router>

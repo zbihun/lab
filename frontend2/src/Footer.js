@@ -11,7 +11,7 @@ import logo from './logo.png';
 
 const Footer = () => {
   return (
-    <div style={{left: "0", "bottom": "0", right: "0"}}>
+    <div style={{left: "0", "bottom": "0", right: "0", position: "fixed"}}>
     <AppBar position="static" style={{backgroundColor: "#7071E8", color: "#fff"}}>
       <Toolbar>
         <Typography variant="body2" color="inherit" style={{ marginLeft: '20px' }}>
